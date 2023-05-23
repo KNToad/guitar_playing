@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<TITLE> kekes </TITLE>
+    <style>
+	</style>
+	<script>
+    setInterval(Tick,1000);
+    
+    const months = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
+	function Tick(){
+    	const date = new Date();
+        document.getElementById('year').innerHTML = date.getFullYear();
+        document.getElementById('day').innerHTML = date.getDay();
+        document.getElementById('month').innerHTML = months[date.getMonth()-1];
+        document.getElementById('time').innerHTML = date.toLocaleTimeString();
+    };
+	</script>
+</HEAD>
+
+<BODY style="padding: 3%; font-size: 17px">
+	<div style="padding: 1%; border:3px solid black; margin:0 30% 0 30%; text-align: center; font-weight: bold; font-size: 22px"> 
+    	<p id="year">----<p>
+        <p id="day">--<p>
+        <p id="month">-------<p>
+        <p id="time">--:--:--<p>
+    </div>
+</BODY>
+</HTML>

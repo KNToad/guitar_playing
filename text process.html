@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE> kekes </TITLE>
+</HEAD>
+<style>
+</style>
+<script>
+	function Process(){
+    var text = document.getElementById('text').value;
+    if(text == '') {
+    document.getElementById('warn').style.visibility='visible';
+    } 
+    else{
+    document.getElementById('warn').style.visibility='hidden';
+   	var words = text.split(' ');
+   
+    var amount = words.length;
+    
+    words.sort(function(a,b){return a.length - b.length});
+    var long_word = words[amount-1];
+    var short_word = words[0]; 
+    var reversed = text.split('').reverse().join('');
+    
+    document.getElementById('words_amount').innerHTML = 'Количество слов: '+ amount;
+    document.getElementById('long_word').innerHTML = 'Самое длинное слово: '+ long_word;
+    document.getElementById('short_word').innerHTML = 'Самое короткое слово: '+ short_word;
+    document.getElementById('reversed').innerHTML = 'Обратный порядок: '+ reversed;
+    }};
+    
+    function Again(){
+    document.getElementById('text').value='';
+    document.getElementById('warn').style.visibility='hidden';
+    document.getElementById('words_amount').innerHTML = 'Количество слов: ';
+    document.getElementById('long_word').innerHTML = 'Самое длинное слово: ';
+    document.getElementById('short_word').innerHTML = 'Самое короткое слово: ';
+    document.getElementById('reversed').innerHTML = 'Обратный порядок: ';
+    };
+</script>
+<BODY style="padding: 3%; font-size: 17px">
+<form>
+<p>
+<label  for="text">Введите текст: </label>
+<input type="text" id="text"></input>
+</p>
+<p style="padding-top: 25px">Результат обработки</p>
+<div style="padding:7px; margin:0 25% 0 25%; text-align:left; border: 1px solid black"> <p id="words_amount">Количество слов: </p>
+<p id="long_word">Самое длинное слово: </p>
+<p id="short_word">Самое короткое слово: </p>
+<p id="reversed">Обратный порядок: </p>
+</div>
+<p style="margin:0 25% 0 25%; text-align: center">
+	<button id="process" type="button" style="margin:10px; width:100px" onclick="Process()">Обработать</button>
+	<button id="process" type="button" style="margin:10px; width:100px" onclick="Again()">Заново</button></p>
+</form>
+<p id="warn" style="padding:7px; margin:0 25% 0 25%; text-align: center; border: 1px solid black; background-color:red; color: black; visibility:hidden"><b>ОТСУТСТВУЕТ ТЕКСТ</b></p>
+</BODY>
+</HTML>

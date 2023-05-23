@@ -1,0 +1,337 @@
+@import "vars.css";
+
+body {
+  margin: 0;
+  font-family: 'Kanit',
+  sans-serif;
+  font-size: 15px;
+  color: var(--black);
+  background-color: white;
+}
+
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+
+
+/* Navigator --------------------------------------*/
+.nav {
+  background-color: var(--yellow);
+  font-size: 17px;
+  opacity: 0.9;
+
+  position: fixed;
+  display: flex;
+  margin: 0 8%;
+  padding: 2px;
+  width: 84%;
+  justify-content: center;
+  z-index: 3;
+
+  border-left: 1px solid var(--brown);
+  border-right: 1px solid var(--brown);
+  border-bottom: 1px solid var(--brown);
+  border-radius: 0 0 15px 15px ;
+}
+.nav__link {
+  width: 20%;
+  padding: 10px;
+  position: relative;
+
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 700;
+  text-shadow: none;
+
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+.nav__link.right {
+  border-radius: 0 0 15px 0;
+}
+.nav__link.left {
+  border-radius: 0 0 0 15px;
+}
+.nav__link:hover:not(.active){
+  background-color: #f7ee65;
+  color: #61532d;
+}
+#slider {
+  display: none;
+  position: fixed;
+  z-index: 4;
+
+  width: 16.8%;
+  margin: 0 8%;
+  height: 54px;
+  background-color: rgba(74, 56, 7,0.4);
+  border: 7px solid var(--black);
+  border-top: none;
+  border-radius: 0 0 15px 15px ;
+}
+#upBtn {
+  display: block;
+  position: fixed;
+  z-index: 4;
+  right: 35px;
+  bottom: -54px;
+
+  width: 54px;
+  height: 54px;
+
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/49/Eo_circle_brown_arrow-up.svg');
+  background-size: cover;
+}
+/* Header -------------------------*/
+header{
+  display: block;
+  height: 100vh;
+}
+header::before {
+  content: '';
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  background-image:url("https://www.ox.ac.uk/sites/files/oxford/field/field_image_main/electric%20guitar%20landscape.jpg");
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+.header__container {
+  position: absolute;
+  display: flex;
+
+  top: 60vh;
+  height: 40vh;
+  width: 100%;
+  background-color: rgba(50,30,0,0.8);
+}
+.header__text {
+  padding: 20px 20px;
+}
+.header__title {
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--yellow-light);
+  font-size: 70px;
+  font-weight: 700;
+}
+.header__subtitle {
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--yellow-light);
+  font-size: 45px;
+}
+.header__logo {
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 392px;
+}
+
+
+/* MAIN BODY -------------------------------------------------------------------------*/
+.mainBody {
+  background-color: var(--bg-color);
+  display: grid;
+}
+
+
+/* description -------------------------------*/
+.description__title {
+  margin-top: 30px;
+  padding:40px;
+  background-color: rgba(226,223,124,0.8);
+
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 500;
+}
+.description__text {
+  padding: 30px 80px;
+  background-color: rgba(50,30,0,0.4);
+
+  color: var(--yellow-light);
+  font-size: 25px;
+  text-align: justify;
+}
+.description_p {
+  padding-left: 20px;
+  border-left: 10px solid var(--yellow-light);
+  margin-bottom: 15px;
+}
+
+/* slideShow -----------------------------------*/
+.slideShow {
+  position: relative;
+  margin-top: 80px;
+  height: 70vh;
+  overflow: hidden;
+}
+.slides {
+  display: none;
+}
+.images {
+  width: 100%;
+  vertical-align: middle;
+}
+.slide__text {
+  display: block;
+  color: var(--yellow-light);
+  font-size: 30px;
+  margin: 0 25%;
+  padding: 8px 20px;
+  position: absolute;
+  top: 0%;
+  width: 50%;
+  text-align: center;
+  background-color: rgba(50,30,0,0.8);
+  border-radius: 0 0 15px 15px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+#next, #prev {
+  cursor: pointer;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 5%;
+  padding: 32vh 0;
+  color: var(--yellow-light);
+  font-weight: bold;
+  font-size: 5vh;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+}
+#next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+#prev:hover, #next:hover {
+  background-color: rgba(50,30,0,0.8);
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Skills ------------------------------------*/
+.skills {
+  margin-top: 80px;
+  background-color: rgba(50,30,0,0.4);
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.skills__title {
+  background-color: rgb(226,223,124);
+  padding: 20px 25%;
+  font-size: 45px;
+}
+.skills__list {
+  font-size: 25px;
+  list-style-type: none;
+  padding: 20px 25% 20px 0;
+  text-align: right;
+}
+.skills__skill {
+  margin-bottom: 5vh;
+  padding: 2vh 20vh 2vh 0;
+  background: linear-gradient(to right, transparent, var(--yellow-light));
+  border-radius: 0 10px 10px 0;
+}
+
+/* Requires ------------------------------------------------*/
+.requires {
+  margin-top: 80px;
+  background-color: rgba(50,30,0,0.4);
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.requires__title{
+  background-color: rgb(226,223,124);
+  padding: 20px 5%;
+  font-size: 45px;
+}
+.requires__lists{
+  display: flex;
+  font-size: 25px;
+  text-align: center;
+  padding: 2vh 7%;
+  justify-content: space-between;
+}
+.requires__skills, .requires__stuff {
+  padding: 0;
+  list-style-type: none;
+  width: 40%;
+}
+.requires__point {
+  margin-bottom: 5vh;
+  padding: 2vh;
+  background-color: var(--yellow-light);
+  border-radius: 10px;
+}
+
+/* References -------------------------------------*/
+.references {
+  margin-top: 80px;
+  background-color: rgba(50,30,0,0.4);
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.references__title {
+  background-color: rgb(226,223,124);
+  padding: 20px 5%;
+  font-size: 45px;
+}
+.references__list {
+  margin: 5vh 0;
+  font-size: 25px;
+  text-align: center;
+  padding: 2vh 7%;
+  list-style-type: none;
+  width: 100%;
+}
+.references_ref {
+  margin-bottom: 5vh;
+  padding: 2vh;
+  background-color: var(--yellow-light);
+  border-radius: 10px;
+
+  transition: background-color 0.2s linear;
+}
+.references_ref a {
+  text-decoration: none;
+  color: var(--brown)
+}
+.references_ref:hover{
+  background-color: #f7ee65;
+}

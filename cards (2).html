@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE> kekes </TITLE>
+<meta charset="utf-8">
+</HEAD>
+<style>
+	.pages {
+    	width:100%;
+        margin-top:150px;
+        border-top: 2px solid black;
+    }
+    .cards {
+    	border:2px solid black; 
+        border-collapse:collapse; 
+        width:500px; 
+        text-align:center;
+    }
+    .imgCell {
+    	border-right:2px solid black; 
+        width:125px;
+    }
+</style>
+<script>
+	var page = 1
+
+    function ShowCard()	{
+    	document.getElementById('student_card').style.visibility='visible';
+    
+		document.getElementById('surname').innerHTML = document.getElementById('surname_input').value;
+    	document.getElementById('fname').innerHTML = document.getElementById('fname_input').value;
+        document.getElementById('email').innerHTML = document.getElementById('email_input').value;
+        document.getElementById('phone_number').innerHTML = document.getElementById('phone_number_input').value;
+    }
+    
+    function DrawCards() {
+    var surname = document.getElementById('surname_input').value;
+    var fname = document.getElementById('fname_input').value;
+    var email = document.getElementById('email_input').value;
+    var phone_number = document.getElementById('phone_number_input').value;
+    let logo = document.createElement('img'); logo.src='https://www.rea.ru/_controltemplates/15/Views/Lanit.REA/Design/img/logo2.jpg';
+    
+    let card = document.createElement('table');
+    card.className = 'cards';
+    card.insertRow(0);
+    card.insertRow(1);
+    card.insertRow(2);
+    card.rows[0].insertCell(0);
+    card.rows[0].insertCell(1);
+    card.rows[0].insertCell(2);
+    card.rows[1].insertCell(0);
+    card.rows[1].insertCell(1);
+    card.rows[2].insertCell(0);
+    card.rows[2].insertCell(1);
+    card.rows[0].cells[0].rowSpan=3;
+    card.rows[0].cells[0].append(logo);
+    card.rows[0].cells[0].className='imgCell';
+    card.rows[0].cells[1].innerHTML='РЭУ им. Г.В.Плеханова';
+    card.rows[0].cells[2].innerHTML='15.11Д-ПМПМИ03/21Б';
+    card.rows[1].cells[0].innerHTML=surname;
+    card.rows[1].cells[1].innerHTML=fname;
+    card.rows[2].cells[0].innerHTML=email;
+    card.rows[2].cells[1].innerHTML=phone_number;
+ 
+ 	let cards_page = document.createElement('div');
+    cards_page.className = 'pages';
+    
+    let cards_table = document.createElement('table');
+    for(var i=0; i<6; i++) {
+        cards_table.insertRow(i);
+        for( var j=0; j<3; j++){
+            cards_table.rows[i].insertCell(j);
+            cards_table.rows[i].cells[j].style.width='33%';
+            cards_table.rows[i].cells[j].append(card.cloneNode(true));
+        }
+    }
+    cards_page.append('PAGE '+page++);
+    cards_page.append(cards_table);
+    document.body.append(cards_page);
+    }
+</script>
+<BODY>
+<table>
+	<tr>
+    	<td>Фамилия:</td>
+        <td><input type="text" id="surname_input"></input></td>
+    </tr>
+    <tr>
+    	<td>Имя:</td>
+        <td><input type="text" id="fname_input"></input></td>
+    </tr>
+    <tr>
+    	<td>Телефон:</td> 
+        <td><input type="text" id="phone_number_input"></input></td>
+    </tr>
+    <tr>
+    	<td>E-mail:</td> 
+        <td><input type="text" id="email_input"></input></td>
+    </tr>
+</table>
+<p><button id="show_card" type="button" style="margin:10px" onclick="ShowCard()">ВИЗИТКА</button>
+   <button id="draw_cards" type="button" style="margin:10px" onclick="DrawCards()">СОЗДАТЬ ЛИСТ ВИЗИТОК</button>
+</p>
+<script>
+	document.write('<p><table id="student_card" class="cards" style="visibility:hidden">');
+    document.write('<tr>')
+    document.write('<td rowspan=3 class="imgCell"><img src="https://www.rea.ru/_controltemplates/15/Views/Lanit.REA/Design/img/logo2.jpg" alt="REA logotype"</td>');
+    document.write('<td>РЭУ им. Г.В.Плеханова</td>');
+    document.write('<td>15.11Д-ПМПМИ03/21Б</td>');
+    document.write('</tr>');
+    document.write('<tr>');
+    document.write('<td id="surname"></td>');
+    document.write('<td id="fname"></td>');
+    document.write('</tr>');
+    document.write('<tr>');
+    document.write('<td id="email"></td>');
+    document.write('<td id="phone_number"></td>');
+    document.write('</tr>');
+    document.write('</table></p>');
+</script>
+<div>
+</BODY>
+</HTML>

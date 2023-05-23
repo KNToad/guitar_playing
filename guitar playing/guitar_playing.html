@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,500;0,700;1,900&family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="src/src.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guitar playing</title>
+</head>
+<body>
+<!-- Navigaror ---------------------------------------------->
+<nav class="nav">
+  <a class="nav__link left" href="#description">описание</a>
+  <a class="nav__link" href="#slideShow">иллюстрации</a>
+  <a class="nav__link" href="#skills">навыки</a>
+  <a class="nav__link" href="#requires">требования</a>
+  <a class="nav__link right" href="#references">ссылки</a>
+</nav>
+<div id="slider"></div>
+<a href="#header"><div id="upBtn"></div></a>
+
+<!-- header------------------------------------------- -->
+<header id="header">
+  <div class="header__container">
+    <img class="header__logo" src="https://t4.ftcdn.net/jpg/01/01/37/55/360_F_101375580_AL5m40B400O43ifLiEecP0yBMMShyfay.jpg" alt="">
+    <div class="header__text">
+      <h1 class="header__title">обучение игре на гитаре</h1>
+      <h2 class="header__subtitle">узнай все об игре на гитаре</h2>
+    </div>
+  </div>
+</header>
+
+<div class="mainBody">
+  <!-- description------------------------------------------- -->
+  <div id="description" class="description">
+    <div class="description__title">
+      описание
+    </div>
+    <div class="description__text">
+      <div class="description_p">
+        Возможно, вы с детства мечтали научиться играть на гитаре,
+        но почему-то мечта так и осталась нереализованной?
+        А возможно, желание освоить этот удивительный инструмент
+        пришло к вам совсем недавно?
+      </div>
+      <div class="description_p">
+        Даже если возраст для поступления в музыкальную школу давно прошел,
+        это не повод отказывать себе в удовольствии. Учеба на курсах игры
+        на гитаре для начинающих взрослых — вполне логичный выбор.
+      </div>
+      <div class="description_p">
+        Другое дело, что многим взрослым трудно преодолеть психологический
+        барьер и начать учиться чему-то новому, когда традиционный возраст
+        ученичества уже миновал. Хочется найти в Москве курсы,
+        частные уроки или школу игры на гитаре для взрослых, начинающих
+        с нуля, где было бы заниматься удобно, комфортно и интересно.
+      </div>
+    </div>
+  </div>
+
+  <!-- slideShow------------------------------------------- -->
+  <div id="slideShow" class="slideShow">
+    <div id="slide_1" class="slides fade">
+      <div class="slide__text">гитарный хват</div>
+      <img class="images" src="https://avatars.dzeninfra.ru/get-zen_doc/920263/pub_5afbc8101410c30992ccd815_5afbc89b3c50f7143d328d30/scale_1200">
+    </div>
+    <div id="slide_2" class="slides fade">
+      <div class="slide__text">настройка гитары</div>
+      <img class="images" src="https://i.ytimg.com/vi/q8djQGyn-pQ/maxresdefault.jpg">
+    </div>
+    <div id="slide_3" class="slides fade">
+      <div class="slide__text">медиаторы</div>
+      <img class="images" src="https://sanchez-lessons.com/content/blog/cover/drew-patrick-miller-mlxnqppatuw-unsplash_2.jpg">
+    </div>
+    <div id="slide_4" class="slides fade">
+      <div class="slide__text">простые мелодии</div>
+      <img class="images" src="https://lifehacker.ru/wp-content/uploads/2017/02/Dollarphotoclub_31585697_1569848895-e1569848912520.jpg">
+    </div>
+
+    <a id="prev" onclick="plusSlides(-1)">❮</a>
+    <a id="next" onclick="plusSlides(1)">❯</a>
+  </div>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
+
+  <!-- Skills------------------------------------------- -->
+  <div id="skills" class="skills">
+    <div class="skills__title">
+      Игра на гитаре развивает:
+    </div>
+    <ul class="skills__list">
+      <li class="skills__skill">слух</li>
+      <li class="skills__skill">моторику</li>
+      <li class="skills__skill">память</li>
+      <li class="skills__skill">логическое мышление</li>
+      <li class="skills__skill">чувство вкуса</li>
+    </ul>
+  </div>
+
+  <!-- Requires------------------------------------------- -->
+  <div id="requires" class="requires">
+    <div class="requires__title">
+      Для игры на гитаре необходимо:
+    </div>
+    <div class="requires__lists">
+      <ul class="requires__skills">
+        <li class="requires__point">усидчивость</li>
+        <li class="requires__point">внимательность</li>
+        <li class="requires__point">контроль тела</li>
+        <li class="requires__point">чувство ритма</li>
+      </ul>
+      <ul class="requires__stuff">
+        <li class="requires__point">гитара</li>
+        <li class="requires__point">тюнер</li>
+        <li class="requires__point">усилитель</li>
+        <li class="requires__point">провода</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- References------------------------------------------- -->
+  <div id="references" class="references">
+    <div class="references__title">
+      ссылки на обучающие сайты:
+    </div>
+    <ul class="references__list">
+      <li class="references_ref"><a href="https://tuneronline.ru/">тюнер</a></li>
+      <li class="references_ref"><a href="https://www.songsterr.com/">табулатуры</a></li>
+      <li class="references_ref"><a href="https://virtuozy-msk.ru/courses/kursy-gitary-dlya-vzroslyh/">курсы</a></li>
+      <li class="references_ref"><a href="https://www.musicca.com/ru/metronom">метроном</a></li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
